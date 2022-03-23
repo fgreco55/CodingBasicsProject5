@@ -17,12 +17,12 @@ public class UserInput {
         /*
          clear the list of user input tokens
          */
-        public void clear() {
+        private void clear() {
                 args = new ArrayList<String>();
         }
 
         /*
-         Get the first token on the line ("zeroth" token)
+         Get the first token on the line ("zeroth" token) -  convenience method
          */
         public String getCommand() {
                 return args.get(0);
@@ -39,6 +39,7 @@ public class UserInput {
          Primary method that gets a line from the user and puts each token into an arraylist
          */
         public ArrayList<String> getArgs() {
+                clear();
                 if (userinput.hasNextLine()) {                  // If the user typed something... even just a <CR>
                         String cmd = userinput.nextLine();
 
@@ -70,11 +71,10 @@ public class UserInput {
                 UserInput ui = new UserInput();
 
                 while (true) {
-                        ui.clear();
-                        System.out.print("Command> ");                  // show prompt to user
+                        System.out.print("Command> ");          // show prompt to user
 
-                        ui.getArgs();
-                        ui.displayArgs();
+                        ui.getArgs();                           // Get the input from the user
+                        ui.displayArgs();                       // Display all the args
                 }
         }
 }
