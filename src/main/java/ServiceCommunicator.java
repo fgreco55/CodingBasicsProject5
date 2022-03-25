@@ -20,7 +20,6 @@ public class ServiceCommunicator {
      Constructor - supply the target URL and try to make the connection
      */
     public ServiceCommunicator(String url) {
-        super();
         setURL(url);        // this method is below...
     }
 
@@ -28,7 +27,6 @@ public class ServiceCommunicator {
      Constructor - in case we need a no-args constructor (we prob won't, but just in case we need it)
      */
     public ServiceCommunicator() {
-        super();
     }
 
     /*
